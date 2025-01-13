@@ -91,20 +91,21 @@ nav {
   flex-wrap: nowrap;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-end;
   margin-top: clamp(1.1875rem, 0.6521rem + 2.677vw, 3.125rem);
+  margin-bottom: clamp(2.8125rem, 1.3445rem + 7.3402vw, 8.125rem);
 }
 .logo-link{
   width:var(--logo-width);
 }
 .button {
   font-size: clamp(0.75rem, 0.6809rem + 0.3454vw, 1rem);
-  padding: 20px 47px;
+  
   background: #a24936;
   color: #f5f0ee;
   border-radius: 33px;
   box-shadow: 3px 3px 6px 0px rgb(77 77 77 / 40%);
   display: inline-block;
+  padding: clamp(0.5rem, 0.2927rem + 1.0363vw, 1.25rem) clamp(0.9375rem, 0.3848rem + 2.7634vw, 2.9375rem) ;
 }
 .button.about-btn {
   background: #fff;
