@@ -1,0 +1,87 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+:root {
+  --step-0: clamp(0.875rem, 0.7023rem + 0.8636vw, 1.5rem);
+  --step-1: clamp(1.0938rem, 0.8986rem + 0.9758vw, 1.8rem);
+  --step-2: clamp(1.3672rem, 1.1481rem + 1.0954vw, 2.16rem);
+  --step-3: clamp(1.709rem, 1.465rem + 1.2201vw, 2.592rem);
+  --step-4: clamp(2.1362rem, 1.867rem + 1.346vw, 3.1104rem);
+  --step-5: clamp(2.6703rem, 2.3768rem + 1.4676vw, 3.7325rem);
+  --step-6: clamp(3.3379rem, 3.0225rem + 1.5767vw, 4.479rem);
+  --step-7: clamp(4.1723rem, 3.84rem + 1.6614vw, 5.3748rem);
+  --step-8: clamp(5.2154rem, 4.8743rem + 1.7054vw, 6.4497rem);
+  --step-9: clamp(6.5193rem, 6.182rem + 1.6862vw, 7.7397rem);
+  --fluid-22-35: clamp(1.375rem, 1.1505rem + 1.1226vw, 2.1875rem);
+  --fluid-70-80: clamp(4.375rem, 4.2023rem + 0.8636vw, 5rem);
+  --fluid-59-75: clamp(3.6875rem, 3.4112rem + 1.3817vw, 4.6875rem);
+  --fluid-20-30: clamp(1.25rem, 1.0773rem + 0.8636vw, 1.875rem);
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: "Public Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #282b28;
+  background: #f5f0ee;
+}
+h1,
+h2 {
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+h1 {
+  font-size: var(--step-7);
+  line-height: var(--fluid-70-80);
+  margin-bottom: var(--fluid-20-30);
+}
+h2 {
+  font-size: var(--step-6);
+  line-height: var(--fluid-59-75);
+  margin-bottom: var(--fluid-20-30);
+}
+p {
+  font-size: var(--step-0);
+  line-height: var(--fluid-22-35);
+  margin-bottom: var(--fluid-20-30);
+}
+a {
+  transition: all 0.4s ease;
+  text-decoration: none;
+}
