@@ -24,19 +24,13 @@ ul {
 }
 :root {
   --step-0: clamp(0.875rem, 0.7023rem + 0.8636vw, 1.5rem);
-  --step-1: clamp(1.0938rem, 0.8986rem + 0.9758vw, 1.8rem);
-  --step-2: clamp(1.3672rem, 1.1481rem + 1.0954vw, 2.16rem);
-  --step-3: clamp(1.709rem, 1.465rem + 1.2201vw, 2.592rem);
-  --step-4: clamp(2.1362rem, 1.867rem + 1.346vw, 3.1104rem);
-  --step-5: clamp(2.6703rem, 2.3768rem + 1.4676vw, 3.7325rem);
   --step-6: clamp(3.3379rem, 3.0225rem + 1.5767vw, 4.479rem);
   --step-7: clamp(4.1723rem, 3.84rem + 1.6614vw, 5.3748rem);
-  --step-8: clamp(5.2154rem, 4.8743rem + 1.7054vw, 6.4497rem);
-  --step-9: clamp(6.5193rem, 6.182rem + 1.6862vw, 7.7397rem);
   --fluid-22-35: clamp(1.375rem, 1.1505rem + 1.1226vw, 2.1875rem);
   --fluid-70-80: clamp(4.375rem, 4.2023rem + 0.8636vw, 5rem);
   --fluid-59-75: clamp(3.6875rem, 3.4112rem + 1.3817vw, 4.6875rem);
   --fluid-20-30: clamp(1.25rem, 1.0773rem + 0.8636vw, 1.875rem);
+  --logo-width: clamp(8.5rem, 7.3428rem + 5.7858vw, 12.6875rem);
 }
 
 ol,
@@ -84,4 +78,35 @@ p {
 a {
   transition: all 0.4s ease;
   text-decoration: none;
+}
+/* main layout styles */
+nav, main, footer {
+  max-width: 1478px;
+  margin: 0 auto;
+  padding: 0px 15px;
+}
+/* nav styles */
+nav {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: clamp(1.1875rem, 0.6521rem + 2.677vw, 3.125rem);
+}
+.logo-link{
+  width:var(--logo-width);
+}
+.button {
+  font-size: clamp(0.75rem, 0.6809rem + 0.3454vw, 1rem);
+  padding: 20px 47px;
+  background: #a24936;
+  color: #f5f0ee;
+  border-radius: 33px;
+  box-shadow: 3px 3px 6px 0px rgb(77 77 77 / 40%);
+  display: inline-block;
+}
+.button.about-btn {
+  background: #fff;
+  color: #282b28;
 }
