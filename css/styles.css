@@ -121,6 +121,7 @@ nav {
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin-bottom: clamp(0.625rem, -0.7049rem + 6.6494vw, 5.4375rem);
 }
 
 .hero-image {
@@ -154,5 +155,34 @@ nav {
     flex-basis: 50%;
     max-width: initial;
     margin-inline: clamp(0rem, -0.829rem + 4.1451vw, 3rem);
+  }
+}
+/********************************** 
+            About styles
+***********************************/
+.about,
+.contact {
+  background: #fff;
+  padding: clamp(1.25rem, 0.5592rem + 3.4542vw, 3.75rem)
+    clamp(0.9375rem, -1.3941rem + 11.658vw, 9.375rem);
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: clamp(0.625rem, -0.7049rem + 6.6494vw, 5.4375rem);
+}
+.about-img img {
+  border-radius: 33px;
+}
+@media screen and (min-width: 834px) {
+  .about,
+  .contact {
+    flex-direction: row;
+    gap: 3rem;
+  }
+  .about-img {
+    flex-basis: 35%;
+  }
+  .about-text {
+    flex-basis: 65%;
   }
 }
