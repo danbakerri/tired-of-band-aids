@@ -57,13 +57,13 @@ h1,
 h2 {
   font-family: "EB Garamond", serif;
   font-optical-sizing: auto;
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
 }
 h1 {
-  font-size: var(--step-7);
-  line-height: var(--fluid-70-80);
-  margin-bottom: var(--fluid-20-30);
+  font-size: clamp(2.75rem, 1.5237rem + 6.1313vw, 7.1875rem);
+  line-height: clamp(44px, 25.7617px + 5.6995vw, 110px);
+  margin-bottom: clamp(0.75rem, 0.6118rem + 0.6908vw, 1.25rem);
 }
 h2 {
   font-size: var(--step-6);
@@ -80,7 +80,9 @@ a {
   text-decoration: none;
 }
 /* main layout styles */
-nav, main, footer {
+nav,
+main,
+footer {
   max-width: 1478px;
   margin: 0 auto;
   padding: 0px 15px;
@@ -92,22 +94,65 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   margin-top: clamp(1.1875rem, 0.6521rem + 2.677vw, 3.125rem);
-  margin-bottom: clamp(2.8125rem, 1.3445rem + 7.3402vw, 8.125rem);
+  margin-bottom: clamp(1.875rem, 1.1842rem + 3.4542vw, 4.375rem);
 }
-.logo-link{
-  width:var(--logo-width);
+.logo-link {
+  width: var(--logo-width);
 }
 .button {
   font-size: clamp(0.75rem, 0.6809rem + 0.3454vw, 1rem);
-  
+
   background: #a24936;
   color: #f5f0ee;
   border-radius: 33px;
   box-shadow: 3px 3px 6px 0px rgb(77 77 77 / 40%);
   display: inline-block;
-  padding: clamp(0.5rem, 0.2927rem + 1.0363vw, 1.25rem) clamp(0.9375rem, 0.3848rem + 2.7634vw, 2.9375rem) ;
+  padding: clamp(0.5rem, 0.2927rem + 1.0363vw, 1.25rem)
+    clamp(0.9375rem, 0.3848rem + 2.7634vw, 2.9375rem);
 }
 .button.about-btn {
   background: #fff;
   color: #282b28;
+}
+/********************************** 
+            hero styles
+***********************************/
+.hero {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.hero-image {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5vw;
+}
+.hero-image img {
+  width: 60%;
+}
+.hero-text {
+  flex-basis: 100%;
+  margin-inline: auto;
+  max-width: 500px;
+}
+@media screen and (min-width: 834px) {
+  .hero {
+    flex-direction: row;
+    text-align: initial;
+    gap: 2rem;
+  }
+  .hero-image {
+    flex-basis: 50%;
+    margin-bottom: 0px;
+  }
+  .hero-image img {
+    width: initial;
+  }
+  .hero-text {
+    flex-basis: 50%;
+    max-width: initial;
+    margin-inline: clamp(0rem, -0.829rem + 4.1451vw, 3rem);
+  }
 }
