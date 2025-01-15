@@ -66,8 +66,8 @@ h1 {
   margin-bottom: clamp(0.75rem, 0.6118rem + 0.6908vw, 1.25rem);
 }
 h2 {
-  font-size: clamp(2.375rem, 1.995rem + 1.8998vw, 3.75rem);
-  line-height: clamp(2.375rem, 1.995rem + 1.8998vw, 3.75rem);
+  font-size: clamp(2.1875rem, 1.7557rem + 2.1589vw, 3.75rem);
+  line-height: clamp(2.1875rem, 1.7557rem + 2.1589vw, 3.75rem);
   margin-bottom: clamp(0.75rem, 0.6118rem + 0.6908vw, 1.25rem);
 }
 p {
