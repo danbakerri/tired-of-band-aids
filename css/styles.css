@@ -66,12 +66,12 @@ h1 {
   margin-bottom: clamp(0.75rem, 0.6118rem + 0.6908vw, 1.25rem);
 }
 h2 {
-  font-size: var(--step-6);
-  line-height: var(--fluid-59-75);
-  margin-bottom: var(--fluid-20-30);
+  font-size: clamp(2.375rem, 1.995rem + 1.8998vw, 3.75rem);
+  line-height: clamp(2.375rem, 1.995rem + 1.8998vw, 3.75rem);
+  margin-bottom: clamp(0.75rem, 0.6118rem + 0.6908vw, 1.25rem);
 }
 p {
-  font-size: var(--step-0);
+  font-size: clamp(1rem, 0.8618rem + 0.6908vw, 1.5rem);
   line-height: var(--fluid-22-35);
   margin-bottom: var(--fluid-20-30);
 }
@@ -158,7 +158,7 @@ nav {
   }
 }
 /********************************** 
-            About styles
+    About and Contact styles
 ***********************************/
 .about,
 .contact {
@@ -173,6 +173,25 @@ nav {
 }
 .about-img img {
   border-radius: 33px;
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 36%;
+}
+.about-text {
+  order: 2;
+}
+.about-img {
+  width: 100%;
+  order: 1;
+  margin-bottom: clamp(1.25rem, 1.0773rem + 0.8636vw, 1.875rem);
+}
+.contact-img {
+  margin-bottom: clamp(1.25rem, 1.0773rem + 0.8636vw, 1.875rem);
+  width: 60%;
+}
+.contact-text {
+  text-align: center;
 }
 @media screen and (min-width: 834px) {
   .about,
@@ -182,8 +201,23 @@ nav {
   }
   .about-img {
     flex-basis: 35%;
+    order: 2;
+    margin-bottom: initial;
+  }
+  .about-img img {
+    height: initial;
   }
   .about-text {
     flex-basis: 65%;
+    order: 1;
+  }
+  .contact-img {
+    flex-basis: 50%;
+    margin-bottom: initial;
+    width: initial;
+  }
+  .contact-text {
+    flex-basis: 50%;
+    text-align: left;
   }
 }
