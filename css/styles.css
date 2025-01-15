@@ -221,3 +221,19 @@ nav {
     text-align: left;
   }
 }
+/********************************** 
+   Footer styles
+***********************************/
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: clamp(0.625rem, -0.7049rem + 6.6494vw, 3.4375rem);
+}
+p.copyright {
+  margin: 0px;
+  font-size: clamp(0.5rem, 0.8618rem + 0.6908vw, 1rem);
+}
+a.top {
+  width: clamp(1rem, 0.8618rem + 0.6908vw, 1.5rem);
+}
