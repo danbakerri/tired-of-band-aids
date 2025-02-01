@@ -33,6 +33,15 @@ ul {
   --fluid-59-75: clamp(3.6875rem, 3.4112rem + 1.3817vw, 4.6875rem);
   --fluid-20-30: clamp(1.25rem, 1.0773rem + 0.8636vw, 1.875rem);
   --logo-width: clamp(8.5rem, 7.3428rem + 5.7858vw, 12.6875rem);
+  --color-text: #282828;
+  --size: clamp(10rem, 1rem + 40vmin, 30rem);
+  --gap: calc(var(--size) / 14);
+  --duration: 90s;
+  --duration-quick: 90s;
+  --duration-icon: 60s;
+  --scroll-start: 0;
+  --scroll-end: calc(-100% - var(--gap));
+  --icon-size: clamp(6.25rem, 4.4498rem + 9.0009vw, 12.5rem);
 }
 
 ol,
@@ -54,6 +63,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #282b28;
   background: #f5f0ee;
+  overflow-x: hidden;
 }
 h1,
 h2 {
@@ -165,6 +175,134 @@ nav {
     margin-inline: clamp(0rem, -0.829rem + 4.1451vw, 3rem);
   }
 }
+
+/********************************** 
+    Marquee styles
+***********************************/
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  gap: var(--gap);
+  -webkit-mask-image: linear-gradient(
+    var(--mask-direction, to right),
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 10%,
+    hsl(0 0% 0% / 1) 90%,
+    hsl(0 0% 0% / 0)
+  );
+  mask-image: linear-gradient(
+    var(--mask-direction, to right),
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 10%,
+    hsl(0 0% 0% / 1) 90%,
+    hsl(0 0% 0% / 0)
+  );
+}
+.quote {
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+
+  color: #282828;
+  font-size: clamp(1.5625rem, 1.0995rem + 2.3148vw, 3.125rem);
+}
+.marquee__group {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--gap);
+  min-width: 100%;
+  -webkit-animation: scroll-x var(--duration) linear infinite;
+  animation: scroll-x var(--duration) linear infinite;
+}
+.marquee__group.quick {
+  -webkit-animation: scroll-x var(--duration-quick) linear infinite;
+  animation: scroll-x var(--duration-quick) linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__group {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+}
+
+@-webkit-keyframes scroll-x {
+  from {
+    transform: translateX(var(--scroll-start));
+  }
+  to {
+    transform: translateX(var(--scroll-end));
+  }
+}
+
+@keyframes scroll-x {
+  from {
+    transform: translateX(var(--scroll-start));
+  }
+  to {
+    transform: translateX(var(--scroll-end));
+  }
+}
+
+/* Element styles */
+.marquee svg {
+  display: grid;
+
+  fill: transparent;
+
+  aspect-ratio: 1 / 1;
+
+  width: clamp(2.75rem, 1.5237rem + 6.1313vw, 7.1875rem);
+}
+
+/* Parent wrapper */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  margin: auto;
+
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  margin-top: clamp(0.625rem, -0.7049rem + 6.6494vw, 5.4375rem);
+
+  margin-bottom: clamp(0.625rem, -0.7049rem + 6.6494vw, 5.4375rem);
+}
+
+.rotate {
+  animation: loading var(--duration-icon) linear infinite;
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-back {
+  animation: loading-back var(--duration-icon) linear infinite;
+}
+@keyframes loading-back {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
 /********************************** 
     About and Contact styles
 ***********************************/
@@ -176,8 +314,11 @@ nav {
   border-radius: 50px;
   display: flex;
   flex-direction: column;
-  margin-bottom: clamp(0.625rem, -0.7049rem + 6.6494vw, 5.4375rem);
+
   align-items: center;
+}
+.contact {
+  margin-bottom: clamp(0.625rem, -0.7049rem + 6.6494vw, 5.4375rem);
 }
 .about-img img {
   border-radius: 33px;
